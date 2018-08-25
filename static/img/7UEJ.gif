@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><style>body, html {
+  margin: 0;
+  background-color: #000;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+.media-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  max-width: 100%;
+}
+.media {
+  border: 1px solid gray;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+.link-left {
+  display: inline-block;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.link-right {
+  display: inline-block;
+  margin-top: 5px;
+  color: #06a0ea;
+  align-self: flex-end;
+}
+.link-left, .link-right {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.media-url { display: block; }
+</style><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic-ext" rel="stylesheet"><!-- google tag manager--><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N5CMB25');</script><title>wallpapers GIF on GIFER</title><meta property="og:description" content=""><meta property="og:title" content="wallpapers GIF on GIFER"><meta property="og:site_name" content="GIFER"><meta name="description" content=""><meta name="twitter:site" content="@gifer"><meta name="twitter:domain" content="gifer.com"><meta name="twitter:title" content="wallpapers GIF on GIFER"><meta name="twitter:description" content=""><meta property="og:url" content="https://gifer.com/7UEJ"><meta property="og:image" content="https://i.gifer.com/fetch/w300-preview/ce/ce855de406efbdf9842d8fae20ad13fe.gif"></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5CMB25" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div class="media-container" itemscope itemtype="http://schema.org/ImageObject" style="width:2867px;"><meta itemprop="representativeOfPage" content="true"><meta itemprop="name" content="wallpapers GIF on GIFER"><meta itemprop="caption" content="wallpapers GIF on GIFER"><meta itemprop="width" content="2867"><meta itemprop="height" content="1612"><a class="link-left" href="https://gifer.com/">GIFER</a><a class="media-url" itemprop="url" href="https://gifer.com/7UEJ"><img class="media" itemprop="contentUrl" width="100%" src="https://i.gifer.com/7UEJ.gif"></a><a class="link-right" href="https://gifer.com/gifs/wallpapers">See all wallpapers GIFs</a></div></body></html>
