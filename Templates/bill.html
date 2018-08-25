@@ -1,0 +1,106 @@
+{% extends 'base.html' %} {% block container %}
+<div class="container">
+    <h2>CHECKOUTS</h2>
+    <p>Ensure the details for final order</p>
+    <button class="accordion">
+        <span class="design">Confirm & verify the amount</span>
+    </button>
+    <div class="panel">
+        <div class="container cartlist">
+            <h1 class="text-center">
+                Super Bill
+                <br>
+                <small class="text-center"></small>
+            </h1>
+            <table class="table">
+                <thead>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Final</th>
+
+                </thead>{% for row in products %}
+                <tr>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ totalPrice }}</td>
+                    {% endfor %}
+                </tr>
+            </table>
+			  <h1>Total:{{ totalPrice }}</h1>
+          <br>
+        </div>
+    </div>
+    <button class="accordion">
+        <span class="design">Address confirmation</span>
+    </button>
+    <div class="panel" >
+            <h1 class="text-center"id=""open>
+                Address For Delivery
+                <br>
+                <small class="text-center">Provide your address </small>
+            </h1>
+            <form class="form-inline" action="/address" method="POST" style="background:transparent;">
+				<div class="form-group">
+                    <input type="email" class="form-control"name="email" placeholder=" Enter your email" required="" />                    
+			   </div>
+                <div class="form-group">
+                    <input type="text"class="form-control" name="address" placeholder="Address" required="" />
+                </div >
+                <div class="form-group">
+                    <input type="text"class="form-control" name="mobile" placeholder="Mobile number" required="" />
+                </div>
+                <div class="form-group">
+                    <input type="text"class="form-control" name="postcode" placeholder="Postal Code" required="" />
+                </div><br><br>
+                <div class="form-group">
+                    <button class="btn btn-sucess btn-lg"   type="submit" value=""><a href="/end" style="text-decoration-line:none">FINISH</a></button>
+                   
+                </div>
+            </form>
+        </div>
+    </div>
+</div> <br><br>
+<div class="container">
+    <div class="Row services">
+        <div class="col-sm-1">
+            <i class="fa fa-truck" aria-hidden="true"></i>
+        </div>
+        <div class="col-sm-2">
+            <h2>Free Shipping</h2>
+        </div>
+        <div class="col-sm-1">
+            <i class="fa fa-umbrella" aria-hidden="true"></i>
+        </div>
+        <div class="col-sm-2">
+            <h2>24/7 support</h2>
+        </div>
+        <div class="col-sm-1">
+            <i class="fa fa-money" aria-hidden="true"></i>
+        </div>
+        <div class="col-sm-2">
+            <h2>Money Back Guarantee</h2>
+        </div>
+        <div class="col-sm-1">
+            <i class="fa fa-gift" aria-hidden="true"></i>
+        </div>
+        <div class="col-sm-2">
+            <h2>Free Gift Coupans</h2>
+        </div>
+    </div>
+</div>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script> {% endblock %}

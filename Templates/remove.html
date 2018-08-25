@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-world</title>
+    <script src="{{ url_for('static',filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/styles.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet">
+</head>
+
+<body class="rem">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12" style="margin:0px;">
+                <h1 style="color: honeydew" class="text-center">remove items</h1>
+                <div class="table-responsive">
+                    <table>
+                        {% for i in range(6) %}
+                        <tr>
+                            {% for row in data %}
+                            <td>
+                                <a href="/removeItem?productId={{row[0]}}" style="color:white" >
+                                    {% if i == 3 %}
+                                    <button type="button" class="btn btn-danger btn-lg">Remove This Item </button>
+                                    {% else %} {{row[i]}} {% endif %}
+                                </a>
+                            </td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-world</title>
+    <script src="{{ url_for('static',filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='css/styles.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static',filename='font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container center-text">
+            <div class="row" id="scrollUp">
+                <div class="col-md-3 text-center header-top">
+                    <a href="/">
+                        <i class="fa fa-home" aria-hidden="true"></i> Home
+                    </a>
+                </div>
+                <div class="col-md-3 text-center header-top">
+                    <a href="/prod">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Product
+                    </a>
+                </div>
+                <div class="col-md-3 text-center header-top">
+                    <a href="/login">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i> Login
+                    </a>
+                </div>
+                <div class="col-md-3 text-center header-top">
+                    <div class="share" style="color:white">
+                        <i class="fa fa-facebook-square fb" aria-hidden="true"></i>&NonBreakingSpace;
+                        <i class="fa fa-twitter-square tw" aria-hidden="true"></i>&NonBreakingSpace;
+                        <i class="fa fa-tumblr-square tr" aria-hidden="true"></i>&NonBreakingSpace;
+                        <i class="fa fa-pinterest-square pt" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-two">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <form class="search-container">
+                        <input type="search" name="search" placeholder="Search here..." required="">
+                        <button type="submit">
+                            <i class="fa fa-search search"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="col-md-6 logo">
+                    <h1 class="text-center">
+                        <a href="/">
+                            <strong style="color:black">
+                                E-WORLD
+                            </strong>
+                        </a>
+                    </h1>
+                </div>
+                <div class="col-md-3">
+                    <ul class="ul_two">
+                        <li>
+                            <a href="/cart"> Cart{{ noOfItems }}</a>
+                        </li>
+                        <li>
+                            {% if not loggedIn %}
+							<br>
+                            <a href="/loginForm">
+                                <i class="fa fa-sign-in" aria-hidden="true"></i> &NonBreakingSpace;Login</a>
+                            {% else %}
+                            <div class="dropdown">
+                                <p class="dropdown-toggle " id="drop" data-toggle="dropdown">Hi,{{ firstName }} <i class="fa fa-caret-down"></i></p>  
+                                <div class="dropdown-menu" area-labelledby="drop">
+                                    
+                                    <container><ul>
+                                    <li><a class="dropdown-item btn" style="float:left;"href="/cart">
+                                        <span style="color:black"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&NonBreakingSpace; Your Orders<span>
+                                    </a></li><br>
+                                    <li><a class="dropdown-item btn" href="/account/profile/changePassword">
+                                        <span style="color:black"> <i class="fa fa-user" aria-hidden="true"></i> &NonBreakingSpace; Change password<span>
+                                    </a></li><br>
+                                    <li style="position: relative;display: block;"><a class="dropdown-item btn" href="/logout" class="btn btn-danger">
+                                        <span style="color:black;"><i class="fa fa-sign-out" aria-hidden="true"></i>
+&NonBreakingSpace;                                            Sign Out<span>
+                                    </a></li></container>
+                                </ul>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="border-bottom: 1px solid rgb(161, 159, 159)"></div>
+    <br> {% block container %} {% endblock%}
+    <div class="footer">
+        <div class="mySidenav" class="sidenav">
+            <a href="/" id="about">Home &NonBreakingSpace; &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;
+                <i class="fa fa-home" aria-hidden="true"></i>
+            </a>
+            <a href="/prod" id="blog">Products &NonBreakingSpace;
+                <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+            </a>
+            <a href="/login" id="projects">account &NonBreakingSpace;
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+            <a href="/cart" id="contact">Cart Item&NonBreakingSpace;
+                <i class="fa fa-handshake-o" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="container-fluid foot-data">
+            <div class="row">
+                <div class="col-sm-3 foot-1">
+                    <div class="row">
+                        <a href="#">
+                            <strong class="text-left">
+                                <span style="color:orange">E</span>-W
+                                <i class="fa fa-power-off" aria-hidden="true"></i>RLD
+                            </strong>
+                        </a>
+                    </div>
+
+                    <div class="row">
+                        <p>
+                            This is the first website for online purchase of goods and services
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="foot-icon">
+                            <i class="fa fa-facebook-square fb" aria-hidden="true"></i>&NonBreakingSpace;
+                            <i class="fa fa-twitter-square tw" aria-hidden="true"></i>&NonBreakingSpace;
+                            <i class="fa fa-tumblr-square tr" aria-hidden="true"></i>&NonBreakingSpace;
+                            <i class="fa fa-pinterest-square pt" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 foot-2">
+                    <div class="row">
+                        <h2 class="text-center">
+                            <strong style="color:orange">OUR</strong> INFORMATION</h2>
+                    </div>
+                    <div class="row">
+                        <ul class="text-center">
+                            <li>Home</li>
+                            <li>Mobile Accessories</li>
+                            <li>Computer</li>
+                            <li>Smart Bands</li>
+                            <li>Earphones</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 foot-3" id="info">
+                    <div class="row">
+                        <h2 class="text-center">
+                            <strong style="color:orange">STORE</strong> INFORMATION</h2>
+                    </div>
+                    <div class="row">
+                        <p style="color:orange">
+                            <i class="fa fa-phone" aria-hidden="true"></i>Phone Number</p>
+                    </div>
+                    <div class="row">
+                        <p style="margin-left:140px;">+91 978 978 9789</p>
+                    </div>
+
+
+                    <br>
+                    <p style="color:orange">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>E-mail Address</p>
+                    <p style="margin-left:140px;">eworld@gmail.com</p>
+                </div>
+                <div class="col-md-3 foot-4" style="margin-top:40px; ">
+                    <h2 style="color: white">
+                        <strong style="color:orange">CUSTOMER</strong> RATING</h2>
+                    <br>
+                    <img src="static/img/rating.png">
+                </div>
+            </div>
+            <div class="row text-center">
+                <h1 style="color: white">ALL CARDS ACCEPTABLE</h1>
+                <img src="static/img/payment.png" width="40%">
+            </div>
+           
+        </div>
+    </div>
+</body>
+
+</html>

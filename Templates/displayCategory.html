@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block container %}
+
+
+<div class="item active">
+    <div class="container">
+        <h2><strong>Showing all products of Category <h1 style="color:orange">{{categoryName}}</h1></strong></h2>
+        {% for itemData in data %}
+        <div class="container text-center">
+        <table>
+            <tr id="productName">
+                {% for row in itemData %}
+                <td >
+                    <h2 style="margin: 30px;"><strong>{{row[1]}}</strong></h2>
+                </td>
+                {% endfor %}
+            </tr>
+            <tr id="productImage">
+                {% for row in itemData %}
+                <td>
+                    <a class="catalog" href="/productDescription?productId={{row[0]}}">
+                        <img src={{ url_for('static', filename='uploads/' + row[3]) }} class="img-thumbnail"width="200px" height="200px" id="itemImage" />
+                    </a>
+                </td>
+                {% endfor %}
+                <small>click image for more details</small>
+            </tr>
+            <tr id="productPrice">
+                {% for row in itemData %}
+                <td>
+                     <h3 style="margin: 30px;color:orange">Price Rs.{{row[2]}}</h3>
+                </td>
+                {% endfor %}
+            </tr>
+        </table>
+        {% endfor %}
+    </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="{{ url_for('static',filename='font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body logger>
+    <h1>Welcome </h1>
+    <div class="main-agileits">
+        <div class="form-w3-agile">
+            <h1>E-World</h1>
+            <h2>Password Recovery</h2>
+            <form action="/account/profile/changePassword" method="post">
+                <div class="form-sub-w3">
+                    <input type="password" name="oldpassword" placeholder=" Old Password" required="" />
+                    <div class="icon-w3">
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="form-sub-w3">
+                    <input type="password" name="newpassword" placeholder="New Password" required="" />
+                    <div class="icon-w3">
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="form-sub-w3">
+                    <input placeholder="Confirm New-Password" type="password" name="cpassword"required="">
+                    <div class="icon-agile">
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    </div>
+                </div>
+                    <p class="p-bottom-w3ls">-----------Redirect me to 
+                        <a class="w3_play_icon1" href="{{ url_for('login') }}"> Login Page</a>-----------
+                    </p>
+                <div class="submit-w3l">
+                    <input type="submit" value="Change password">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-2.1.4.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.js') }}" type="text/javascript"></script>
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+ 
+{% block container %}
+    <div class="container cartlist">
+        <h1 class="text-center">
+            Cart
+            <br>
+            <small class="text-center">Select & sort your choices</small>
+        </h1>
+        <table class="table">
+            <thead>
+                
+                <th>Buy/Cancel</th>
+                <th>Product name</th>
+                <th>Cost</th>
+                <th>Status</th>
+            </thead>{% for row in products %}
+            <tr>
+                <td><a class="btn btn-danger" href="/removeFromCart?productId={{row[0]}}">Cancel</a></td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>Avaiable</td>
+                {% endfor%}
+            </tr><tr></tr>
+        </table>
+        <h1>Total:{{ totalPrice }}</h1>
+        <a href="/bill" class="btn btn-success btn-lg"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>&NonBreakingSpace;Confirm </a>
+    </div>
+    <div class="container">
+        <div class="Row services">
+            <div class="col-sm-1">
+                <i class="fa fa-truck" aria-hidden="true"></i>
+            </div>
+            <div class="col-sm-2">
+                <h2>Free Shipping</h2>
+            </div>
+            <div class="col-sm-1">
+                <i class="fa fa-umbrella" aria-hidden="true"></i>
+            </div>
+            <div class="col-sm-2">
+                <h2>24/7 support</h2>
+            </div>
+            <div class="col-sm-1">
+                <i class="fa fa-money" aria-hidden="true"></i>
+            </div>
+            <div class="col-sm-2">
+                <h2>Money Back Guarantee</h2>
+            </div>
+            <div class="col-sm-1">
+                <i class="fa fa-gift" aria-hidden="true"></i>
+            </div>
+            <div class="col-sm-2">
+                <h2>Free Gift Coupans</h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}
